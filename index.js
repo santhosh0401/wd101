@@ -20,7 +20,7 @@ if (savedData) {
     emailCell.innerHTML = data.email;
     passwordCell.innerHTML = data.password;
     dobCell.innerHTML = data.dob;
-    termsCell.innerHTML = data.termsAccepted ? 'Yes' : 'No';
+    termsCell.innerHTML = data.termsAccepted ? 'true' : 'false';
   });
 } else {
   savedData = [];
@@ -63,7 +63,7 @@ form.addEventListener('submit', (event) => {
   emailCell.innerHTML = formData.email;
   passwordCell.innerHTML = formData.password;
   dobCell.innerHTML = formData.dob;
-  termsCell.innerHTML = formData.termsAccepted ? 'Yes' : 'No';
+  termsCell.innerHTML = formData.termsAccepted ? 'true' : 'false';
 
   // Reset form
   form.reset();
