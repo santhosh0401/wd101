@@ -29,7 +29,8 @@ form.addEventListener('submit', (event) => {
   event.preventDefault();
 
   // Additional validation for date of birth
-  const dob = new Date(dobInput.value);
+  const dobParts = dobInput.value.split(' ');
+  const dob = new Date(dobParts[2], dobParts[1] - 1, dobParts[0]);
   const age = (new Date() - dob) / (365 * 24 * 60 * 60 * 1000);
   if (age < 18 || age > 55) {
     alert('Please enter a valid date of birth between ages 18 and 55.');
@@ -58,8 +59,7 @@ form.addEventListener('submit', (event) => {
   nameCell.innerHTML = formData.name;
   emailCell.innerHTML = formData.email;
   passwordCell.innerHTML = formData.password;
-  const dobDate = new Date(formData.dob);
-  dobCell.innerHTML = dobDate.getFullYear() + '-' + ('0' + (dobDate.getMonth() + 1)).slice(-2) + '-' + ('0' + dobDate.getDate()).slice(-2);
+  dobCell.innerHTML = dob.getFullYear() + '-' + ('0' + (dob.getMonth() + 1)).slice(-2) + '-' + ('0' + dob.getDate()).slice(-2);
   termsCell.innerHTML = formData.termsAccepted ? 'Yes' : 'No';
 
   // Reset form
