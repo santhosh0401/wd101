@@ -59,7 +59,7 @@ form.addEventListener('submit', (event) => {
   nameCell.innerHTML = formData.name;
   emailCell.innerHTML = formData.email;
   passwordCell.innerHTML = formData.password;
-  dobCell.innerHTML = dob.getFullYear() + '-' + ('0' + (dob.getMonth() + 1)).slice(-2) + '-' + ('0' + dob.getDate()).slice(-2);
+  dobCell.innerHTML = formData.dob;
   termsCell.innerHTML = formData.termsAccepted ? 'Yes' : 'No';
 
   // Reset form
