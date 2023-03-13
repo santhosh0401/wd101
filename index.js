@@ -25,15 +25,18 @@ if (savedData) {
 } else {
   savedData = [];
 }
+
 form.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  // Additional validation for date of birth
-  const dobParts = dobInput.value.split(' ');
-  const dob = new Date(dobParts[2], dobParts[1] - 1, dobParts[0]);
-  const age = (new Date() - dob) / (365 * 24 * 60 * 60 * 1000);
-  if (age < 18 || age > 55) {
-    alert('Please enter a valid date of birth between ages 18 and 55.');
+  // Get user's date of birth and calculate age
+  const dob = new Date(dobInput.value);
+  const ageInMilliseconds = Date.now() - dob.getTime();
+  const ageInYears = ageInMilliseconds / 1000 / 60 / 60 / 24 / 365;
+
+  // Check if user is between 18 and 55 years old
+  if (ageInYears < 18 || ageInYears > 55) {
+    alert('You must be between 18 and 55 years old to register.');
     return;
   }
 
