@@ -7,21 +7,25 @@
     <h1>Registration Form</h1>
     <form id="registration-form">
       <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Password</th>
-            <th>Date of Birth</th>
-            <th>Accepted Terms?</th>
-          </tr>
-        </thead>
         <tbody>
           <tr>
+            <td>Name:</td>
             <td><input type="text" id="name" required></td>
+          </tr>
+          <tr>
+            <td>Email:</td>
             <td><input type="email" id="email" required></td>
+          </tr>
+          <tr>
+            <td>Password:</td>
             <td><input type="password" id="password" required></td>
-            <td><input type="text" id="dob" required></td>
+          </tr>
+          <tr>
+            <td>Date of Birth:</td>
+            <td><input type="date" id="dob" required></td>
+          </tr>
+          <tr>
+            <td>Accepted Terms?</td>
             <td><input type="checkbox" id="terms" required></td>
           </tr>
         </tbody>
@@ -43,5 +47,5 @@
     </table>
 
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
